@@ -23,7 +23,6 @@ public class BookstoreApplication {
 	@Bean
 	public CommandLineRunner bookStoreDemo(BookRepository brepository, CategoryRepository crepository) {
 		return (args) -> {
-			log.info("insert some data to H2 database");
 			crepository.save(new Category("Drama"));
 			crepository.save(new Category("Lifestyle"));
 			crepository.save(new Category("Folklore"));

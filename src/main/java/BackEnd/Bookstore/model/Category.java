@@ -2,6 +2,8 @@ package BackEnd.Bookstore.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -11,6 +13,7 @@ public class Category {
 		private Long categoryId;
 		private String name;
 		
+		@JsonIgnore
 		@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
 		private List<Book> books;
 		
